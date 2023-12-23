@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+</head>
+<body>
+    <form action="/signup" method="post">
+        <div class="form-group">
+            <label for="username">username</label>
+            <input type="text" name="username" id="username" required value="<%= data.username %>">
+
+            <label for="password">password</label>
+            <input type="password" name="password" id="password" required value="<%= data.password %>">
+
+            <label for="name">name</label>
+            <input type="text" name="name" id="name" required value="<%= data.name %>">
+
+            <label for="dob">date of birth</label>
+            <input type="date" name="dob" id="dob" required value="<%= data.dob %>">
+
+            <label for="gender">gender</label>
+            <select id="gender" name="gender" required>
+
+            <option value="" <% if (!data.gender) { %>selected<% } %>></option>
+            <option value="male" <% if (data.gender === 'male') { %>selected<% } %>>male</option>
+            <option value="female" <% if (data.gender === 'female') { %>selected<% } %>>female</option>
+            <option value="other" <% if (data.gender === 'other') { %>selected<% } %>>other</option>
+            </select>
+
+            <% if (data.script) { %>
+                <script><%- data.script %></script>
+            <% } %>
+
+            <button type="submit" class="btn" name="action" value="signup">signup</button>
+        </div>
+    </form>
+</body>
+</html>

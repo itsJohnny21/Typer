@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/typer.css">
+    <script src="./scripts/typer.js"></script>
+    <title>TypeTester</title>
+</head>
+<body>
+    <h1>Type Tester</h1>
+
+    <div class="form-group">
+        <form action="/" method="post">
+            <% if (user === null) { %>
+                <button type="submit" class="btn" name="action" value="login">login</button>
+            <% } else { %>
+                <p>welcome, <%= user.name %>!</p>
+                <button type="submit" class="btn" name="action" value="logout">logout</button>
+            <% } %>
+
+            <button type="submit" class="btn" name="topic" value="<%= suggestion1 %>"><%= suggestion1 %></button>
+            <button type="submit" class="btn" name="topic" value="<%= suggestion2 %>"><%= suggestion2 %></button>
+            <button type="submit" class="btn" name="topic" value="<%= suggestion3 %>"><%= suggestion3 %></button>
+        </form>
+        
+        <form action="/" method="post">
+            <input type="text" name="topic" placeholder="enter a topic">
+        </form>
+
+    </div>
+
+    <div class="test-text-container">
+        <h3 id="topic"> <%= suggestion1 %></h3>
+        <p id="test-content"><%= testContent %></p>
+    </div>
+    <div class="user-text-container">
+        <p id="user-content"></p>
+    </div>
+</body>
+</html>

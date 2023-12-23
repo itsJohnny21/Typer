@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form action="/login" method="post">
+        <label for="username">username</label>
+        <input type="text" id="username" name="username" value="<%= username %>">
+        <label for="password">password</label>
+        <input type="password" id="password" name="password">
+
+        <button type="submit" class="btn" name="action" value="login">login</button>
+        <button type="submit" class="btn" name="action" value="signup">signup</button>
+        <% if (typeof script !== 'undefined') { %>
+            <script><%- script %></script>
+        <% } %>
+    </form>
+
+</body>
+</html>
